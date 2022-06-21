@@ -13,10 +13,10 @@ const Matches = ({data}) => {
             .then(resp => setMatches(resp.data.slice(0,num))) 
             .catch(err => console.log("err",err)) 
 
-    },[num])
+    },[num , puuid])
 
   return (
-    <div>
+    <div className="matches">
         {Matches.length  > 0 && 
         Matches.map((match,index)=> <SingleMatch key={index} data={{puuid, Key_Api,match}}/> )
         }

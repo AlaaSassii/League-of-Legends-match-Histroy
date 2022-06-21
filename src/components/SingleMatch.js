@@ -12,14 +12,14 @@ const SingleMatch = ({data}) => {
             .then(resp =>{ setMatchData(resp.data);console.log('resp',resp.data)})
             .catch(err => console.log(err))
         
-    },[puuid])
+    },[puuid,match])
   return (
     <>
      {JSON.stringify(matchData) != '{}'?
     
     <>
     {matchData.info.participants.find(player=>player.puuid === puuid).win  ? 
-    <Alert  variant={'success'}>
+    <Alert  className='match' variant={'success'}>
     <div>
     <h3 >{matchData.info.gameMode}</h3>
     <h3 >
@@ -29,7 +29,7 @@ const SingleMatch = ({data}) => {
     <Player {...matchData.info} puuid={puuid}/>
     </Alert>   
     : 
-    <Alert  variant={'danger'}>
+    <Alert  className='match' variant={'danger'}>
     <div>
     <h3 >{matchData.info.gameMode}</h3>
     <h3 >

@@ -1,41 +1,33 @@
-.App {
+.button-41 {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #00D775, #00BD68);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 44px;
+  line-height: 44px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
   text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  z-index: 9;
+  border: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button-41:hover {
+  background: #00bd68;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search-player{
   display: flex;
   align-items: center;
@@ -61,4 +53,54 @@
 }
 .winrate-bad{
   color:rgb(174, 0, 0) 
+}
+.matches{
+  border:#282c34 solid 1px  ; 
+  width: 40%;
+  margin : 0 auto ; 
+
+}
+.match{
+  width: 700px;
+  display: flex;
+  margin : 0 auto ; 
+  justify-content: space-around;
+}
+@media(max-width:700px){
+  .matches{
+    width:99%
+  }
+  .match{
+    width: 100%;
+    
+  }
+}
+.champ-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.items {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.player-top{
+  display: flex;
+  justify-content: space-around;
+}
+.player-top-top{
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.participants{
+  width: 50%;
+  justify-content: space-between;
+}
+@media(max-width:700px){
+  .participants{
+    font-size: 10px;
+  }
 }

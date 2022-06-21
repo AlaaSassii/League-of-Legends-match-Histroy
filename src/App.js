@@ -7,13 +7,12 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { Button , TextField} from '@material-ui/core'; 
 import Alert from 'react-bootstrap/Alert'
 import Data from './Data';
-
 function App() {
   const [data, setData] = useState({})
   const [value, setValue] = useState("")
   const [danger ,setDanger]  = useState(false)
   const [error,setError] = useState(false)
-  const Key_Api = "RGAPI-236e1e54-e338-42ab-b65e-9810e8b722ea"
+  const Key_Api = "RGAPI-66bf8a20-67a3-4bd1-a08f-a2e8b9b03066"
   const onChange = (e) => {
     setValue(e.target.value) 
 
@@ -46,7 +45,8 @@ function App() {
 
       <div className='search-player'>
       <TextField value={value} id="standard-basic" label="search player" variant="standard" onChange={(e) =>onChange(e)}  />
-      <Button onClick={value ? (e) => handleSubmit(e) : () => setDanger(true) } variant="text" >search</Button>
+      {/* <Button  variant="text" >search</Button> */}
+      <button onClick={value ? (e) => handleSubmit(e) : () => setDanger(true) } class="button-41" role="button">search</button>
       </div>
       {
         Object.values(data).length > 0 && <Data {...data}  Key_Api={Key_Api}/>
