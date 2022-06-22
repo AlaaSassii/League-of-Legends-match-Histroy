@@ -12,13 +12,12 @@ const Rank = ({data}) => {
         .then(resp =>{console.log(resp.data) ;setRank(resp.data)})
         .catch(err => console.log(err))
     },[id])
-  return (
+  return (  
     <div>
         {   
-        
         rank.length >0 ?
         <>
-          {
+        {
                 rank.length >1 ? 
                 <div>
                 <h3>Solo/duo</h3>
@@ -34,7 +33,7 @@ const Rank = ({data}) => {
             <div>
                 <h3>Rank flex</h3>
                 <p>Unranked</p>
-             </div>
+            </div>
             }
         {
             Object.values(rank[0]).length > 0 ? 
@@ -55,7 +54,7 @@ const Rank = ({data}) => {
             <p>Unranked</p>
             </div>
         }
-      
+
         </>
         :
         <>

@@ -1,10 +1,11 @@
-import React from 'react'
-
-const Player = ({puuid,participants}) => {
+import React ,{useEffect} from 'react'
+import { connect } from 'react-redux/es/exports'
+const Player = ({addingKills,puuid,participants}) => {
     const {assists , deaths , kills,item0,item1,item2,item3,item4,item5,item6} = participants.find(player=>player.puuid === puuid)
     const arr = [item0,item1,item2,item3,item4,item5,item6] 
-    // console.log(assists,kills,deaths)
-    // console.log(participants[0].summonerName)
+    useEffect(()=>{
+        addingKills(kills)
+    },[kills,deaths,assists])
     console.log(participants)
   return (
     <div className="player-top-top">
@@ -39,5 +40,11 @@ const Player = ({puuid,participants}) => {
 </div>
   )
 }
-
-export default Player
+const DispatchToProps = (disatch) => {
+    return {
+        addingKills : (kill) =>{
+            disatch({type:'KILLS' ,payload:{kill}})
+        }
+    }
+}
+export default connect(null,DispatchToProps)(Player)
