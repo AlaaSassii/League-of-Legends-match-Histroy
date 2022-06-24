@@ -1,10 +1,12 @@
 import React ,{useEffect} from 'react'
 import { connect } from 'react-redux/es/exports'
-const Player = ({addingKills,puuid,participants}) => {
+const Player = ({addingAssists,addingDeaths,addingKills,puuid,participants}) => {
     const {assists , deaths , kills,item0,item1,item2,item3,item4,item5,item6} = participants.find(player=>player.puuid === puuid)
     const arr = [item0,item1,item2,item3,item4,item5,item6] 
     useEffect(()=>{
         addingKills(kills)
+        addingDeaths(deaths) 
+        addingAssists(assists)
     },[kills,deaths,assists])
     console.log(participants)
   return (
@@ -44,6 +46,14 @@ const DispatchToProps = (disatch) => {
     return {
         addingKills : (kill) =>{
             disatch({type:'KILLS' ,payload:{kill}})
+        },
+        addingDeaths : (death) => { 
+            disatch({type:'DEATHS' ,payload:{death}})
+
+        } , 
+        addingAssists : (assists) => { 
+            disatch({type:'ASSISTS' ,payload:{assists}})
+
         }
     }
 }

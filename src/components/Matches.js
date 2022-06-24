@@ -10,7 +10,7 @@ const Matches = ({data}) => {
         const Link = `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?api_key=${Key_Api}` 
         console.log(Link)
         axios(Link)
-            .then(resp => setMatches(resp.data.slice(0,num))) 
+            .then(resp => setMatches(resp.data.slice(0,10))) 
             .catch(err => console.log("err",err)) 
 
     },[num , puuid])
