@@ -12,7 +12,7 @@ function App() {
   const [value, setValue] = useState("")
   const [danger ,setDanger]  = useState(false)
   const [error,setError] = useState(false)
-  const Key_Api = "RGAPI-0d592268-8ea7-4da9-8a05-b773459766fd"
+  const Key_Api = "RGAPI-9652134f-ad96-4fac-8314-f0bcf68f9994"
   const onChange = (e) => {
     setValue(e.target.value) 
 
@@ -34,6 +34,7 @@ function App() {
   },[error , danger])
   return (
     <div className="App">
+      j
     { 
     error && <Alert style={{width:"25%",margin:"20px auto"}} variant={'danger'}>
       Data not Found 
@@ -45,14 +46,12 @@ function App() {
 
       <div className='search-player'>
       <TextField value={value} id="standard-basic" label="search player" variant="standard" onChange={(e) =>onChange(e)}  />
-      {/* <Button  variant="text" >search</Button> */}
       <button onClick={value ? (e) => handleSubmit(e) : () => setDanger(true) } class="button-41" role="button">search</button>
-      </div>
+      </div> 
       {
         Object.values(data).length > 0 && <Data {...data}  Key_Api={Key_Api}/>
       }
     </div>
   );
-}
-
+    }
 export default App;

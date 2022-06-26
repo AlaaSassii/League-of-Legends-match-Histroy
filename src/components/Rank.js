@@ -13,7 +13,7 @@ const Rank = ({data}) => {
         .catch(err => console.log(err))
     },[id])
   return (  
-    <div>
+    <div className='Rank'>
         {   
         rank.length >0 ?
         <>

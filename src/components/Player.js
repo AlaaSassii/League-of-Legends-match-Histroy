@@ -45,14 +45,14 @@ const Player = ({addingAssists,addingDeaths,addingKills,puuid,participants}) => 
 const DispatchToProps = (disatch) => {
     return {
         addingKills : (kill) =>{
-            disatch({type:'KILLS' ,payload:{kill}})
+            disatch({type:'KILLS' ,payload:kill})
         },
         addingDeaths : (death) => { 
-            disatch({type:'DEATHS' ,payload:{death}})
+            disatch({type:'DEATHS' ,payload:death})
 
         } , 
         addingAssists : (assists) => { 
-            disatch({type:'ASSISTS' ,payload:{assists}})
+            disatch({type:'ASSISTS' ,payload:assists})
 
         }
     }

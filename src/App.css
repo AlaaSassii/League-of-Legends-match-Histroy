@@ -1,3 +1,6 @@
+body{
+  background-color: red;
+}
 .button-41 {
   background-color: initial;
   background-image: linear-gradient(-180deg, #00D775, #00BD68);
@@ -109,3 +112,26 @@ th, td {
   padding: 15px;
   text-align: left;
 }
+
+
+/* GRIDDDDDDDDDDDDDDDDDDD */
+.grid { 
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-auto-rows: (150px , auto);
+  grid-template-areas:
+    "playerName Rank Rank"
+    "KDA Matches Champions "
+    "KDA2 Matches Champions"
+  ;
+}
+.playerName{
+  grid-area:'playerName';
+}
+.Rank {
+  grid-area:'Rank';
+  display: flex;
+  height: 150px;
+}
+
